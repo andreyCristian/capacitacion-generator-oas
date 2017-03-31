@@ -9,5 +9,5 @@
  */
 angular.module('estudiantesApp')
   .constant('CONF',{
-    HOST:"http://localhost:8080/v1/"
+    PATH_API_ESTUDIANTES:"http://localhost:8080/v1/"
   });
