@@ -8,16 +8,26 @@
  * Factory in the estudiantesApp.
  */
 angular.module('estudiantesApp')
-  .factory('estudianteRequest', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
+  .factory('estudianteRequest', function($http, CONF) {
     // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      get: function(tabla, params) {
+        var peticion = CONF.PATH_API_ESTUDIANTES + tabla + "?" + params;
+        return $http.get(peticion);
+      },
+      post: function(tabla, elemento) {
+        //se realiza definicion de post con formato header, para resolucion del problema post
+        return $http.post(CONF.PATH_API_ESTUDIANTES + tabla, elemento, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          }
+        });
+      },
+      put: function(tabla, id, elemento) {
+        return $http.put(CONF.PATH_API_ESTUDIANTES + tabla + "/" + id, elemento);
+      },
+      delete: function(tabla, id) {
+        return $http.delete(CONF.PATH_API_ESTUDIANTES + tabla + "/" + id);
       }
     };
   });
