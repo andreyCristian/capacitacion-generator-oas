@@ -7,11 +7,11 @@
  * Controller of the estudiantesApp
  */
 angular.module('estudiantesApp')
-.controller('menuCtrl', function($location, $http, $scope, token_service, notificacion, $translate) {
+  .controller('menuCtrl', function($location, $http, $scope, token_service, notificacion, $translate) {
     var paths = [];
     $scope.language = {
-        es:"btn btn-primary btn-circle btn-outline active",
-        en:"btn btn-primary btn-circle btn-outline"
+      es: "btn btn-primary btn-circle btn-outline active",
+      en: "btn btn-primary btn-circle btn-outline"
     };
     $scope.notificacion = notificacion;
     $scope.actual = "";
@@ -19,24 +19,47 @@ angular.module('estudiantesApp')
     $scope.breadcrumb = [];
     $scope.menu_service = [{ //aqui va el servicio de el app de configuracion
       "Id": 2,
-      "Nombre": "nivel 1",
-      "Url": "url_nivel_1",
+      "Nombre": "Estudiantes",
+      "Url": "",
       "Opciones": [{
-        "Id": 3,
-        "Nombre": "nivel 2",
-        "Url": "url_nivel_2",
-        "Opciones": [{
-          "Id": 7,
-          "Nombre": "nivel 3",
-          "Url": "url_nivel_3",
-          "Opciones": [{
-            "Id": 8,
-            "Nombre": "nivel 4 about",
-            "Url": "about",
-            "Opciones": null
-          }]
-        }]
-      }]
+          "Id": 3,
+          "Nombre": "Ver estudiantes",
+          "Url": "ver_estudiantes",
+          "Opciones": null
+        },
+        {
+          "Id": 3,
+          "Nombre": "Editar estudiantes",
+          "Url": "editar_estudiantes",
+          "Opciones": null
+        }, {
+          "Id": 3,
+          "Nombre": "Nuevo estudiante",
+          "Url": "nuevo_estudiante",
+          "Opciones": null
+        }
+      ]
+    }, { //aqui va el servicio de el app de configuracion
+      "Id": 2,
+      "Nombre": "Materias",
+      "Url": "",
+      "Opciones": [{
+          "Id": 3,
+          "Nombre": "Ver materias",
+          "Url": "ver_materias",
+          "Opciones": null
+        },{
+          "Id": 3,
+          "Nombre": "Editar materias",
+          "Url": "editar_materias",
+          "Opciones": null
+        },{
+          "Id": 3,
+          "Nombre": "Nueva materia",
+          "Url": "nueva_materia",
+          "Opciones": null
+        }
+      ]
     }];
 
     var recorrerArbol = function(item, padre) {
@@ -68,7 +91,10 @@ angular.module('estudiantesApp')
       }
     };
     recorrerArbol($scope.menu_service, "");
-    paths.push({padre:["","Notificaciones","Ver Notificaciones"],path:"notificaciones"});
+    paths.push({
+      padre: ["", "Notificaciones", "Ver Notificaciones"],
+      path: "notificaciones"
+    });
 
     $scope.$on('$routeChangeStart', function(next, current) {
       $scope.actual = $location.path();
@@ -76,19 +102,19 @@ angular.module('estudiantesApp')
       console.log(next + current);
     });
 
-    $scope.changeLanguage = function (key){
-        $translate.use(key);
-        switch (key) {
-            case 'es':
-                $scope.language.es = "btn btn-primary btn-circle btn-outline active";
-                $scope.language.en = "btn btn-primary btn-circle btn-outline";
-                break;
-            case 'en':
-                $scope.language.en = "btn btn-primary btn-circle btn-outline active";
-                $scope.language.es = "btn btn-primary btn-circle btn-outline";
-                break;
-            default:
-        }
+    $scope.changeLanguage = function(key) {
+      $translate.use(key);
+      switch (key) {
+        case 'es':
+          $scope.language.es = "btn btn-primary btn-circle btn-outline active";
+          $scope.language.en = "btn btn-primary btn-circle btn-outline";
+          break;
+        case 'en':
+          $scope.language.en = "btn btn-primary btn-circle btn-outline active";
+          $scope.language.es = "btn btn-primary btn-circle btn-outline";
+          break;
+        default:
+      }
     };
     //Pendiente por definir json del menu
     (function($) {

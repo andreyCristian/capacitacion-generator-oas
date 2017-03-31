@@ -53,6 +53,36 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/ver_estudiantes', {
+        templateUrl: 'views/ver_estudiantes.html',
+        controller: 'VerEstudiantesCtrl',
+        controllerAs: 'verEstudiantes'
+      })
+      .when('/editar_estudiantes', {
+        templateUrl: 'views/editar_estudiantes.html',
+        controller: 'EditarEstudiantesCtrl',
+        controllerAs: 'editarEstudiantes'
+      })
+      .when('/ver_materias', {
+        templateUrl: 'views/ver_materias.html',
+        controller: 'VerMateriasCtrl',
+        controllerAs: 'verMaterias'
+      })
+      .when('/editar_materias', {
+        templateUrl: 'views/editar_materias.html',
+        controller: 'EditarMateriasCtrl',
+        controllerAs: 'editarMaterias'
+      })
+      .when('/nuevo_estudiante', {
+        templateUrl: 'views/nuevo_estudiante.html',
+        controller: 'NuevoEstudianteCtrl',
+        controllerAs: 'nuevoEstudiante'
+      })
+      .when('/nueva_materia', {
+        templateUrl: 'views/nueva_materia.html',
+        controller: 'NuevaMateriaCtrl',
+        controllerAs: 'nuevaMateria'
+      })
       .otherwise({
         redirectTo: '/'
       });
