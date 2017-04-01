@@ -1,12 +1,29 @@
 <br>
-<div class="panel panel-default">
+<div class="col-md-8">
+  <div class="panel panel-default">
     <div class="panel-heading">
-        ver_estudiantes.
+      {{ 'VER_ESTUDIANTES' | translate }}
     </div>
     <div class="panel-body">
-        <div ui-grid="verEstudiantes.gridOptions" ui-grid-selection class="myGrid"></div>
+      <div ui-grid="verEstudiantes.gridOptions" ui-grid-selection class="myGrid"></div>
     </div>
-    <div class="panel-footer">
-        Panel Footer
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VER_ESTUDIANTES' | translate }}
     </div>
+    <div class="panel-body">
+      <div class="thumbnail">
+        <img src="images/person-flat.png" alt="..." width="200px">
+        <div class="caption">
+          <h3>Nombre del Estudiante</h3>
+          <pre>
+              
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
