@@ -54,12 +54,12 @@ angular
         controllerAs: 'about'
       })
       .when('/ver_estudiantes', {
-        templateUrl: 'views/ver_estudiantes.html',
+        templateUrl: 'views/estudiante/ver_estudiantes.html',
         controller: 'VerEstudiantesCtrl',
         controllerAs: 'verEstudiantes'
       })
       .when('/editar_estudiantes', {
-        templateUrl: 'views/editar_estudiantes.html',
+        templateUrl: 'views/estudiante/editar_estudiantes.html',
         controller: 'EditarEstudiantesCtrl',
         controllerAs: 'editarEstudiantes'
       })
@@ -74,7 +74,7 @@ angular
         controllerAs: 'editarMaterias'
       })
       .when('/nuevo_estudiante', {
-        templateUrl: 'views/nuevo_estudiante.html',
+        templateUrl: 'views/estudiante/nuevo_estudiante.html',
         controller: 'NuevoEstudianteCtrl',
         controllerAs: 'nuevoEstudiante'
       })
