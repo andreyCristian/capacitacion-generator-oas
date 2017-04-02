@@ -78,10 +78,12 @@ angular.module('estudiantesApp')
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Eliminar'
       }).then(function() {
         estudianteRequest.delete('estudiante', ctrl.estudiante_actual.Id)
           .then(function(response) {
+
             if (response.data === 'OK') {
               get_estudiantes();
               ctrl.limpiar_seleccion();
@@ -90,7 +92,13 @@ angular.module('estudiantesApp')
                 'El estudiante ha sido eliminado.',
                 'success'
               );
-            }
+          }else{
+              swal(
+                'No ha podido ser eliminado!',
+                 response.data,
+                'error'
+              );
+          }
           });
 
       });
