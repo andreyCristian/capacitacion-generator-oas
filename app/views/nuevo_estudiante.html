@@ -1,14 +1,41 @@
 <br>
-<div class="panel panel-default">
+<div class=col-md-8>
+  <div class="panel panel-default">
     <div class="panel-heading">
-        nuevo_estudiante.
+      {{ 'VER_ESTUDIANTES' | translate }}
     </div>
     <div class="panel-body">
-        <p>
-          Ahora puede empezar a construir la vista de nuevo_estudiante.
-        </p>
+      <div ui-grid="nuevoEstudiante.gridOptions" ui-grid-auto-resize ui-grid-selection class="ui_grid"></div>
     </div>
-    <div class="panel-footer">
-        Panel Footer
+  </div>
+
+  <div class="row" align="center" ng-show="!nuevoEstudiante.vista_previa">
+    <button class="btn btn-outline btn-primary btn-md" ng-click="nuevoEstudiante.limpiar_seleccion()">Nuevo Estudiante </button>
+  </div>
+  <br>
+</div>
+<div class="col-md-4" ng-show="nuevoEstudiante.vista_previa">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VISTA_PREVIA_ESTUDIANTES' | translate }}
     </div>
+    <div class="panel-body">
+      <div class="thumbnail">
+        <br>
+        <img src="images/person-flat.png" alt="..." width="150px">
+        <div class="caption">
+
+          <h4>Documento</h4>
+          <input type="number" class="form-control" ng-model="nuevoEstudiante.nuevo_estudiante.Documento"></input>
+          <h4>Nombres del estudiante</h4>
+          <input type="text" class="form-control" ng-model="nuevoEstudiante.nuevo_estudiante.Nombre"></input>
+          <h4>Apellidos del estudiante</h4>
+          <input type="text" class="form-control" ng-model="nuevoEstudiante.nuevo_estudiante.Apellido"></input>
+        </div>
+      </div>
+      <div class="row" align="center" ng-show="nuevoEstudiante.vista_previa">
+        <button class="btn btn-outline btn-primary btn-md" ng-click="nuevoEstudiante.guardar()">Nuevo </button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -10,7 +10,9 @@
 var text_es = {
   TITULO: "GENERATOR-OAS",
   MENSAJE_INICIAL: "Ahora puede comenzar con el desarrollo ...",
-  VER_ESTUDIANTES: "Listado de estudiantes"
+  VER_ESTUDIANTES: "Listado de estudiantes",
+  VISTA_PREVIA_ESTUDIANTES:"Ver estudiante",
+  EDITAR_ESTUDIANTES:"Editar estudiante"
 };
 
 var text_en = {

@@ -1,27 +1,33 @@
 <br>
-<div class="col-md-8">
+<div class=col-md-8>
   <div class="panel panel-default">
     <div class="panel-heading">
       {{ 'VER_ESTUDIANTES' | translate }}
     </div>
     <div class="panel-body">
-      <div ui-grid="verEstudiantes.gridOptions" ui-grid-selection class="myGrid"></div>
+      <div ui-grid="verEstudiantes.gridOptions" ui-grid-auto-resize ui-grid-selection class="ui_grid"></div>
     </div>
   </div>
+
+  <div class="row" align="center" ng-show="verEstudiantes.vista_previa">
+    <button class="btn btn-outline btn-primary btn-md" ng-click="verEstudiantes.limpiar_seleccion()">Limpiar </button>
+  </div>
+  <br>
 </div>
-<div class="col-md-4">
+<div class="col-md-4" ng-show="verEstudiantes.vista_previa">
   <div class="panel panel-default">
     <div class="panel-heading">
-      {{ 'VER_ESTUDIANTES' | translate }}
+      {{ 'VISTA_PREVIA_ESTUDIANTES' | translate }}
     </div>
     <div class="panel-body">
       <div class="thumbnail">
-        <img src="images/person-flat.png" alt="..." width="200px">
+        <br>
+        <img src="images/person-flat.png" alt="..." width="150px">
         <div class="caption">
+          <h3>Documento</h3>
+          <p>{{verEstudiantes.estudiante_actual.Documento}}</p>
           <h3>Nombre del Estudiante</h3>
-          <pre>
-              
-          </pre>
+          <p>{{verEstudiantes.estudiante_actual.Nombre +" "+verEstudiantes.estudiante_actual.Apellido}}</p>
         </div>
       </div>
     </div>

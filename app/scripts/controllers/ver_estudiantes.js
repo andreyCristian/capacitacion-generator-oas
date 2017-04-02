@@ -10,6 +10,7 @@
 angular.module('estudiantesApp')
   .controller('VerEstudiantesCtrl', function($scope, estudianteRequest) {
     var ctrl = this;
+    ctrl.vista_previa = false;
     ctrl.estudiante_actual = null;
     ctrl.gridOptions = {
       enableFiltering: true,
@@ -38,9 +39,15 @@ angular.module('estudiantesApp')
     });
     ctrl.gridOptions.onRegisterApi = function(gridApi) {
       ctrl.gridApi = gridApi;
+
       gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-        console.log("seleccion");
-        console.log(row.entity);
+        ctrl.estudiante_actual = row.entity;
+        if (ctrl.estudiante_actual !== null) {
+          ctrl.vista_previa = true;
+        }
       });
+    };
+    ctrl.limpiar_seleccion = function() {
+      ctrl.vista_previa = null;
     };
   });
