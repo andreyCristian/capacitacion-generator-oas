@@ -64,12 +64,12 @@ angular
         controllerAs: 'editarEstudiantes'
       })
       .when('/ver_materias', {
-        templateUrl: 'views/ver_materias.html',
+        templateUrl: 'views/materia/ver_materias.html',
         controller: 'VerMateriasCtrl',
         controllerAs: 'verMaterias'
       })
       .when('/editar_materias', {
-        templateUrl: 'views/editar_materias.html',
+        templateUrl: 'views/materia/editar_materias.html',
         controller: 'EditarMateriasCtrl',
         controllerAs: 'editarMaterias'
       })
@@ -79,9 +79,14 @@ angular
         controllerAs: 'nuevoEstudiante'
       })
       .when('/nueva_materia', {
-        templateUrl: 'views/nueva_materia.html',
+        templateUrl: 'views/materia/nueva_materia.html',
         controller: 'NuevaMateriaCtrl',
         controllerAs: 'nuevaMateria'
+      })
+      .when('/inscribir_materia', {
+        templateUrl: 'views/inscripciones/inscribir_materia.html',
+        controller: 'InscribirMateriaCtrl',
+        controllerAs: 'inscribirMateria'
       })
       .otherwise({
         redirectTo: '/'

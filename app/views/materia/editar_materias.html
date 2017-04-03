@@ -1,0 +1,40 @@
+<div class="col-md-4" ng-show="editarMaterias.vista_previa">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VISTA_PREVIA_ESTUDIANTES' | translate }}
+    </div>
+    <div class="panel-body">
+      <div class="thumbnail">
+        <br>
+        <img src="images/book-flat.png" alt="..." width="150px">
+        <div class="caption">
+          <h3>Materia</h3>
+          <input type="text" class="form-control" ng-model="editarMaterias.materia_actual.Nombre"></input>
+          <h3>Tipo de materia</h3>
+          <select ng-selected ng-model="editarMaterias.materia_actual.Tipo" class="form-control" ng-options="item.Nombre for item in editarMaterias.tipo_materia">
+          </select>
+
+        </div>
+      </div>
+      <div class="row" align="center" ng-show="editarMaterias.vista_previa">
+
+        <button class="btn btn-outline btn-success btn-md" ng-click="editarMaterias.guardar()">Guardar </button>
+        <button class="btn btn-outline btn-danger btn-md" ng-click="editarMaterias.eliminar()">Eliminar </button>
+        <button class="btn btn-outline btn-info btn-md" ng-click="editarMaterias.anadir_tipo()"> + Tipo </button>
+        <button class="btn btn-outline btn-primary btn-md" ng-click="editarMaterias.limpiar_seleccion()">Cancelar </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-class="{'col-md-8': editarMaterias.vista_previa , 'col-md-8 col-md-offset-2': !editarMaterias.vista_previa}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VER_ESTUDIANTES' | translate }}
+    </div>
+    <div class="panel-body">
+      <div ui-grid="editarMaterias.gridOptions" ui-grid-auto-resize ui-grid-selection class="ui_grid"></div>
+    </div>
+  </div>
+
+  <br>
+</div>

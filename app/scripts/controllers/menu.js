@@ -17,7 +17,7 @@ angular.module('estudiantesApp')
     $scope.actual = "";
     $scope.token_service = token_service;
     $scope.breadcrumb = [];
-    $scope.menu_service = [{ //aqui va el servicio de el app de configuracion
+    $scope.menu_service = [{ //Estudiantes
       "Id": 2,
       "Nombre": "Estudiantes",
       "Url": "",
@@ -39,7 +39,7 @@ angular.module('estudiantesApp')
           "Opciones": null
         }
       ]
-    }, { //aqui va el servicio de el app de configuracion
+  }, { //Materias
       "Id": 2,
       "Nombre": "Materias",
       "Url": "",
@@ -60,7 +60,18 @@ angular.module('estudiantesApp')
           "Opciones": null
         }
       ]
-    }];
+  }, { //Inscripciones
+        "Id": 2,
+        "Nombre": "Inscripciones",
+        "Url": "",
+        "Opciones": [{
+            "Id": 3,
+            "Nombre": "Inscribir Materias",
+            "Url": "inscribir_materia",
+            "Opciones": null
+          }
+        ]
+      }];
 
     var recorrerArbol = function(item, padre) {
       var padres = "";

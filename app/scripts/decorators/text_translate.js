@@ -10,9 +10,19 @@
 var text_es = {
   TITULO: "GENERATOR-OAS",
   MENSAJE_INICIAL: "Ahora puede comenzar con el desarrollo ...",
-  VER_ESTUDIANTES: "Listado de estudiantes",
+  LISTADO_ESTUDIANTES: "Listado de estudiantes",
   VISTA_PREVIA_ESTUDIANTES:"Ver estudiante",
-  EDITAR_ESTUDIANTES:"Editar estudiante"
+  EDITAR_ESTUDIANTES:"Editar estudiante",
+  BTN:{
+      NUEVO:"Nuevo",
+      BORRAR:"Borrar",
+      GUARDAR:"Guardar",
+      ELIMINAR:"Eliminar",
+      ACEPTAR:"Aceptar"
+  },
+  DOCUMENTO:"Documento",
+  NOMBRES_ESTUDIANTE:"Nombres del estudiante",
+  APELLIDOS_ESTUDIANTE:"Apellidos del estudiante"
 };
 
 var text_en = {

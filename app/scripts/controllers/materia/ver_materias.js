@@ -50,6 +50,7 @@ angular.module('estudiantesApp')
       });
     };
     ctrl.limpiar_seleccion = function() {
-      ctrl.vista_previa = null;
+      ctrl.vista_previa = !ctrl.vista_previa;
+      ctrl.materia_actual = null;
     };
   });

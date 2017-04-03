@@ -1,0 +1,32 @@
+<div class="col-md-4" ng-show="verMaterias.vista_previa">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VISTA_PREVIA_ESTUDIANTES' | translate }}
+    </div>
+    <div class="panel-body">
+      <div class="thumbnail">
+        <br>
+        <img src="images/book-flat.png" alt="..." width="150px">
+        <div class="caption">
+          <h3>Asignatura</h3>
+          <p>{{verMaterias.materia_actual.Nombre}}</p>
+          <h3>Tipo</h3>
+          <p>{{verMaterias.materia_actual.Tipo.Nombre}}</p>
+        </div>
+      </div>
+      <div class="row" align="center" ng-show="verMaterias.vista_previa">
+        <button class="btn btn-outline btn-primary btn-md" ng-click="verMaterias.limpiar_seleccion()">Ok </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-class="{'col-md-8': verMaterias.vista_previa , 'col-md-8 col-md-offset-2': !verMaterias.vista_previa}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VER_ESTUDIANTES' | translate }}
+    </div>
+    <div class="panel-body">
+      <div ui-grid="verMaterias.gridOptions" ui-grid-auto-resize ui-grid-selection class="ui_grid"></div>
+    </div>
+  </div>
+</div>

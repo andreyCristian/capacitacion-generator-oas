@@ -1,0 +1,13 @@
+ROUTES:
+
+ver_estudiantes
+editar_estudiantes
+nuevo_estudiante
+ver_materias
+editar_materias
+nueva_materia
+inscribir_materia
+
+FACTORY:
+
+estudiante

@@ -1,0 +1,41 @@
+<div class="col-md-4" ng-show="inscribirMateria.vista_previa">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VISTA_PREVIA_ESTUDIANTES' | translate }}
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li ng-repeat="m in inscribirMateria.mis_materias"><label> {{m.Materia.Nombre}} </label><button ng-click="inscribirMateria.cancelar_materia(m)" class="btn btn-outline btn-circle btn-danger btn-sm"></button></li> 
+        <ol>
+          <br>
+          <div class="row">
+            <div class="col-md-4"><label>Seleccione ...</label></div>
+            <div class="col-md-6">
+              <select ng-selected ng-model="inscribirMateria.materia_actual" class="form-control" ng-options="item.Nombre for item in inscribirMateria.materias">
+            </select>
+            </div>
+          </div>
+          <br>
+          <div class="row" align="center" ng-show="inscribirMateria.vista_previa">
+            <button class="btn btn-outline btn-success btn-md" ng-click="inscribirMateria.guardar()">Inscribir </button>
+            <button class="btn btn-outline btn-primary btn-md" ng-click="inscribirMateria.limpiar_seleccion()">Cancelar </button>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div ng-class="{'col-md-8': inscribirMateria.vista_previa , 'col-md-8 col-md-offset-2': !inscribirMateria.vista_previa}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ 'VER_ESTUDIANTES' | translate }}
+    </div>
+    <div class="panel-body">
+      <div ui-grid="inscribirMateria.gridOptions" ui-grid-auto-resize ui-grid-selection class="ui_grid"></div>
+    </div>
+  </div>
+
+  <div class="row" align="center" ng-show="!inscribirMateria.vista_previa">
+    <button class="btn btn-outline btn-primary btn-md" ng-click="inscribirMateria.limpiar_seleccion()">Nuevo Estudiante </button>
+  </div>
+  <br>
+</div>

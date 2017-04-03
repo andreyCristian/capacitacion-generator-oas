@@ -8,7 +8,7 @@
         <br>
         <img src="images/person-flat.png" alt="..." width="150px">
         <div class="caption">
-          <h3>Documento</h3>
+          <h3>{{ 'DOCUMENTO' | translate }}</h3>
           <p>{{verEstudiantes.estudiante_actual.Documento}}</p>
           <h3>Nombre del Estudiante</h3>
           <p>{{verEstudiantes.estudiante_actual.Nombre +" "+verEstudiantes.estudiante_actual.Apellido}}</p>
@@ -23,7 +23,7 @@
 <div ng-class="{'col-md-8': verEstudiantes.vista_previa , 'col-md-8 col-md-offset-2': !verEstudiantes.vista_previa}">
   <div class="panel panel-default">
     <div class="panel-heading">
-      {{ 'VER_ESTUDIANTES' | translate }}
+      {{ 'LISTADO_ESTUDIANTES' | translate }}
     </div>
     <div class="panel-body">
       <div ui-grid="verEstudiantes.gridOptions" ui-grid-auto-resize ui-grid-selection class="ui_grid"></div>
